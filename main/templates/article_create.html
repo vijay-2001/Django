@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="create-article">
+    <h2>Create an Awesome Article</h2>
+    <form class="site-form highlight" method="post" action="{% url 'main:create' %}" enctype="multipart/form-data">
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+    <script src="/static/slugify.js"></script>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h3>Login</h3>
+<form class="site-form" action="{% url 'accounts:login' %}" method="post">
+    {{ form }}
+    {% if request.GET %}
+        <input type="hidden" name="next" value="{{request.GET.next}}">
+    {% endif %}
+    <input type="submit" value="Login"/>
+</form>
+{% endblock %}
